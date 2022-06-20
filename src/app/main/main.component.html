@@ -1,0 +1,26 @@
+<section class="main-title">
+  <h1>Tiempo de transferencia de un archivo en red</h1>
+</section>
+
+<form [formGroup]="form" autocomplete="off">
+
+  <section class="size-file-container">
+    <div class="size-file">
+      <input type="number" placeholder="3000" formControlName="size" autofocus>
+    </div>
+    <div class="unit-name">
+      <select formControlName="unit">
+        <option value="b">(b) Bytes</option>
+        <option value="kb">(kb) Kilobytes</option>
+        <option value="mb">(mb) Megabytes</option>
+        <option value="gb">(gb) Gigabytes</option>
+        <option value="tb">(tb) Terabytes</option>
+      </select>
+    </div>
+    <div class="reset-container">
+      <button type="button" (click)="reset()">Reset</button>
+    </div>
+  </section>
+
+
+</form>
