@@ -3,24 +3,47 @@
 </section>
 
 <form [formGroup]="form" autocomplete="off">
-
-  <section class="size-file-container">
+  <section class="details-form-container">
     <div class="size-file">
-      <input type="number" placeholder="3000" formControlName="size" autofocus>
+      <input type="number" placeholder="3000" formControlName="size" autofocus />
     </div>
     <div class="unit-name">
       <select formControlName="unit">
-        <option value="b">(b) Bytes</option>
-        <option value="kb">(kb) Kilobytes</option>
-        <option value="mb">(mb) Megabytes</option>
-        <option value="gb">(gb) Gigabytes</option>
-        <option value="tb">(tb) Terabytes</option>
+        <option *ngFor="let item of units" [value]="item.value">{{item.viewValue}}</option>
       </select>
     </div>
     <div class="reset-container">
-      <button type="button" (click)="reset()">Reset</button>
+      <button type="button" (click)="reset()">&#x21BA;</button>
     </div>
   </section>
-
-
 </form>
+
+<section id="results">
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th rowspan="2"><span>Velocidad de<br>Conexión</span></th>
+        <th colspan="3"><span>Tiempo Estimado</span></th>
+      </tr>
+      <tr>
+        <th>Horas</th>
+        <th>Minutos</th>
+        <th>Segundos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of speeds">
+        <td>{{item.text}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+</section>

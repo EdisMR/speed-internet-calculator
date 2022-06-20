@@ -1,0 +1,61 @@
+.details-form-container{
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.size-file{
+  display: inline-block;
+  input{
+    width: 10ch;
+  }
+}
+
+.unit-name{
+  display: inline-block;
+}
+
+.reset-container{
+  display: inline-block;
+  button{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  text-align: center;
+  tr{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  th{
+    text-align: center;
+    padding: 10px;
+    text-align: left;
+    background-color: #4ca0af;
+    color: white;
+  }
+  td{
+    text-align: center;
+    padding: 10px;
+    text-align: left;
+  }
+  tbody{
+    text-align: center;
+    tr:nth-child(even){
+      background-color: #2f9c93;
+      color: white;
+    }
+    tr:nth-child(odd){
+      background-color: #29ada2;
+      color: white;
+    }
+  }
+}
