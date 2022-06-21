@@ -45,10 +45,10 @@ export class MainComponent implements OnInit {
     let result = 0
     switch(unit){
       case 'b': result = value; break;
-      case 'kb': result = value * 1_000; break;
-      case 'mb': result = value * 1_000_000; break;
-      case 'gb': result = value * 1_000_000_000; break;
-      case 'tb': result = value * 1_000_000_000_000; break;
+      case 'kb': result = value * 1_024; break;
+      case 'mb': result = value * 1_048_576; break;
+      case 'gb': result = value * 1_073_741_824; break;
+      case 'tb': result = value * 1_099_511_627_776; break;
       default: result = 0
     }
     return result
