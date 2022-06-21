@@ -21,63 +21,72 @@ export class MainComponent implements OnInit {
   ];
 
   speeds = [
-    { text: '14bps', value: 0.014 },
-    { text: '28bps', value: 0.028 },
-    { text: '33bps', value: 0.033 },
-    { text: '56kps', value: 56 },
-    { text: '64kbps', value: 64 },
-    { text: '128kbps', value: 128 },
-    { text: '256kbps', value: 256 },
-    { text: '512kbps', value: 512 },
-    { text: '900kbps', value: 900 },
-    { text: '1Mbps', value: 1000 },
-    { text: '1.7Mbps', value: 1700 },
-    { text: '2Mbps', value: 2000 },
-    { text: '4Mbps', value: 4000 },
-    { text: '10Mbps', value: 10000 },
-    { text: '40Mbps', value: 40000 },
-    { text: '100Mbps', value: 100_000 },
-    { text: '200Mbps', value: 200_000 },
-    { text: '300Mbps', value: 300_000 },
-    { text: '500Mbps', value: 500_000 },
+    { text: '14bps', value: 14 },
+    { text: '33bps', value: 33 },
+    { text: '56kps', value: 56000 },
+    { text: '64kbps', value: 64000 },
+    { text: '128kbps', value: 128000 },
+    { text: '256kbps', value: 256000 },
+    { text: '512kbps', value: 512000 },
+    { text: '900kbps', value: 900000 },
+    { text: '1Mbps', value: 1_000_000 },
+    { text: '1.7Mbps', value: 1_700_000 },
+    { text: '2Mbps', value: 2_000_000 },
+    { text: '4Mbps', value: 4_000_000 },
+    { text: '10Mbps', value: 10_000_000 },
+    { text: '40Mbps', value: 40_000_000 },
+    { text: '100Mbps', value: 100_000_000 },
+    { text: '300Mbps', value: 300_000_000 },
+    { text: '500Mbps', value: 500_000_000 },
   ];
 
 
-  inputToKiloBytes() {
-    const size = Number(this.form.value.size);
-    const unit = this.form.value.unit;
-
-    if (unit === 'b') {
-      return size / 1024;
+  convertToBytes(value:number,unit:string):number {
+    let result = 0
+    switch(unit){
+      case 'b': result = value; break;
+      case 'kb': result = value * 1_000; break;
+      case 'mb': result = value * 1_000_000; break;
+      case 'gb': result = value * 1_000_000_000; break;
+      case 'tb': result = value * 1_000_000_000_000; break;
+      default: result = 0
     }
-
-    if (unit === 'kb') {
-      return size;
-    }
-
-    if (unit === 'mb') {
-      return size * 1024;
-    }
-
-    if (unit === 'gb') {
-      return size * 1024 * 1024;
-    }
-
-    if (unit === 'tb') {
-      return size * 1024 * 1024 * 1024;
-    }
-
-    return 0;
+    return result
   }
 
-  calculateSpeed(){
-    return 0
+  toDays(bps:number){
+    let result = this.calculateSeconds(bps)/86400
+    return Math.floor(result)
   }
 
+  toHours(bps:number){
+    let result = this.calculateSeconds(bps)/3600
+    return Math.floor(result)
+  }
+
+  toMinutes(bps:number){
+    let result = this.calculateSeconds(bps)/60
+    return Math.floor(result)
+  }
+
+  toSeconds(bps:number){
+    let result = this.calculateSeconds(bps)%60
+    return Math.floor(result)
+  }
+
+  /* Calculate seconds fileSize/bps */
+  calculateSeconds(bps:number):number{
+    let fileSize:number = this.convertToBytes(this.form.value.size,this.form.value.unit)
+    return fileSize/bps
+  }
+
+
+
+  /* FORM UTILITIES */
   buildForm(): void {
     this.form = this._formBuilder.group({
-      size: ['1'],
-      unit: ['b'],
+      size: [''],
+      unit: ['mb'],
     });
 
     this.formSubscription = this.form.valueChanges
@@ -89,6 +98,10 @@ export class MainComponent implements OnInit {
   reset(): void {
     this.form.reset();
   }
+
+
+
+
 
   constructor(private _formBuilder: FormBuilder) {
     this.buildForm();
