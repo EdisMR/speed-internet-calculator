@@ -1,11 +1,18 @@
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .details-form-container{
   display: flex;
   width: 100%;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .size-file{
-  margin: 20px;
+  margin-right: 20px;
   button{
     background-color: transparent !important;
     border: none;
@@ -14,12 +21,14 @@
   }
 }
 
-.unit-name{
-  margin: 20px;
+form{
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #results{
   overflow: auto;
+  margin-bottom: 100px;
 }
 
 table{
@@ -35,7 +44,7 @@ table{
     text-align: center;
     padding: 10px;
     text-align: left;
-    background-color: #4ca0af;
+    background-color: #00c3ff;
     color: white;
   }
   td{
@@ -46,12 +55,24 @@ table{
   tbody{
     text-align: center;
     tr:nth-child(even){
-      background-color: #2f9c93;
+      background-color: hsl(0, 0%, 15%);
       color: white;
     }
     tr:nth-child(odd){
-      background-color: #29ada2;
+      background-color: hsl(0, 0%, 20%);
       color: white;
     }
   }
+}
+
+.centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+a{
+  color: white !important;
 }

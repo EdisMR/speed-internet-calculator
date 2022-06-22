@@ -5,9 +5,9 @@
 $my-primary-color:(
   200:#80a1ac,
   500:#00c3ff,
-  700:#003447,
+  700:#00472f,
   contrast:(
-    200:#000,
+    200:rgb(0, 0, 0),
     500:#fff,
     700:#fff,
   )
@@ -16,7 +16,7 @@ $my-primary-color:(
 $my-accent-color:(
   200:#8fc5b8,
   500:#1f8a70,
-  700:#003447,
+  700:#185546,
   contrast:(
     200:#000,
     500:#fff,

@@ -1,6 +1,10 @@
-<section class="main-title">
-  <h1>Tiempo de transferencia de un archivo en red</h1>
-</section>
+<mat-toolbar color="primary">
+  <section class="centered">
+    <h1>Tiempo de transferencia de un archivo en red</h1>
+  </section>
+</mat-toolbar>
+
+<main>
 
 <form [formGroup]="form" autocomplete="off">
   <section class="details-form-container">
@@ -29,9 +33,10 @@
   </section>
 </form>
 
+
+
+
 <section id="results">
-
-
 
   <table>
     <thead>
@@ -59,6 +64,18 @@
 
 </section>
 
-<footer>
-  <span>Desarrollado por <a href="http://github.com/edismr" target="_blank" rel="noopener noreferrer">@EdisMR</a></span>
-</footer>
+
+</main>
+
+
+
+
+<mat-toolbar color="primary">
+  <section class="centered">
+    <span>Desarrollado por &nbsp;&nbsp;</span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+      <a href="http://github.com/edismr" target="_blank" rel="noopener noreferrer">
+        EdisMR
+      </a>
+  </section>
+  </mat-toolbar>
