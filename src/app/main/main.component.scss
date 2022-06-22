@@ -5,27 +5,17 @@
 }
 
 .size-file{
-  display: inline-block;
-  input{
-    padding: 2px;
-    width: 10ch;
-    font-size: 20px;
+  margin: 20px;
+  button{
+    background-color: transparent !important;
+    border: none;
+    outline: none;
+    color: white !important;
   }
 }
 
 .unit-name{
-  display: inline-block;
-  font-size: 23px;
-}
-
-.reset-container{
-  display: inline-block;
-  button{
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-  }
+  margin: 20px;
 }
 
 #results{

@@ -4,24 +4,28 @@
 
 <form [formGroup]="form" autocomplete="off">
   <section class="details-form-container">
+
     <div class="size-file">
-      <input type="number" placeholder="3000" formControlName="size" autofocus />
+      <mat-form-field appearance="fill">
+        <mat-label>Tamaño de archivo</mat-label>
+        <input matInput type="number" formControlName="size" placeholder="300" #fileSize autofocus>
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="fileSize.value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
     </div>
+
     <div class="unit-name">
-      <!-- <select formControlName="unit">
-        <mat-form-field appearance="fill">
-          <mat-label>Unidad</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let item of units" [value]="food.value">
-              {{food.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </select> -->
+      <mat-form-field appearance="fill">
+        <mat-label>Unidad</mat-label>
+        <mat-select formControlName="unit">
+          <mat-option *ngFor="let item of units" [value]="item.value">
+            {{item.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-    <div class="reset-container">
-      <button type="button" (click)="reset()">&#x21BA;</button>
-    </div>
+
   </section>
 </form>
 
