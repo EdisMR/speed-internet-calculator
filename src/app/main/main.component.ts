@@ -56,22 +56,22 @@ export class MainComponent implements OnInit {
 
   toDays(bps:number){
     let result = this.calculateSeconds(bps)/86400
-    return Math.floor(result)
+    return Math.round(result)
   }
 
   toHours(bps:number){
-    let result = this.calculateSeconds(bps)/3600
-    return Math.floor(result)
+    let result = (this.calculateSeconds(bps)/3600)%24
+    return Math.round(result)
   }
 
   toMinutes(bps:number){
-    let result = this.calculateSeconds(bps)/60
-    return Math.floor(result)
+    let result = (this.calculateSeconds(bps)/60)%60
+    return Math.round(result)
   }
 
   toSeconds(bps:number){
     let result = this.calculateSeconds(bps)%60
-    return Math.floor(result)
+    return Math.round(result)
   }
 
   /* Calculate seconds fileSize/bps */
