@@ -13,7 +13,7 @@
       <mat-form-field appearance="fill">
         <mat-label>File Size</mat-label>
         <input matInput type="number" formControlName="size" placeholder="300" #fileSize autofocus>
-        <button matSuffix mat-icon-button aria-label="Clear" (click)="fileSize.value=''">
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="reset()">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
