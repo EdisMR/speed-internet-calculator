@@ -8,9 +8,16 @@
       <input type="number" placeholder="3000" formControlName="size" autofocus />
     </div>
     <div class="unit-name">
-      <select formControlName="unit">
-        <option *ngFor="let item of units" [value]="item.value">{{item.viewValue}}</option>
-      </select>
+      <!-- <select formControlName="unit">
+        <mat-form-field appearance="fill">
+          <mat-label>Unidad</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let item of units" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </select> -->
     </div>
     <div class="reset-container">
       <button type="button" (click)="reset()">&#x21BA;</button>

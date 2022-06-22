@@ -7,12 +7,15 @@
 .size-file{
   display: inline-block;
   input{
+    padding: 2px;
     width: 10ch;
+    font-size: 20px;
   }
 }
 
 .unit-name{
   display: inline-block;
+  font-size: 23px;
 }
 
 .reset-container{
