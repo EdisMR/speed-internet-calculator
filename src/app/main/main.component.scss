@@ -33,6 +33,7 @@ form{
 #results{
   overflow: auto;
   margin-bottom: 100px;
+  max-width: 100%;
 }
 
 table{
@@ -40,16 +41,16 @@ table{
   border-spacing: 0;
   border: 1px solid #ddd;
   text-align: center;
-  tr{
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
   th{
     text-align: center;
     padding: 10px;
     text-align: left;
     background-color: #00c3ff;
     color: white;
+  }
+  tr{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
   }
   td{
     text-align: center;
@@ -75,6 +76,9 @@ table{
   align-items: center;
   width: 100%;
   text-align: center;
+  h1{
+    white-space: break-spaces;
+  }
 }
 
 a{
