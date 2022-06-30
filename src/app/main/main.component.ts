@@ -21,23 +21,21 @@ export class MainComponent implements OnInit {
   ];
 
   speeds = [
-    { text: '14bps', value: 14 },
-    { text: '33bps', value: 33 },
-    { text: '56kps', value: 56000 },
-    { text: '64kbps', value: 64000 },
-    { text: '128kbps', value: 128000 },
-    { text: '256kbps', value: 256000 },
-    { text: '512kbps', value: 512000 },
-    { text: '900kbps', value: 900000 },
-    { text: '1Mbps', value: 1_000_000 },
-    { text: '1.7Mbps', value: 1_700_000 },
-    { text: '2Mbps', value: 2_000_000 },
-    { text: '4Mbps', value: 4_000_000 },
-    { text: '10Mbps', value: 10_000_000 },
-    { text: '40Mbps', value: 40_000_000 },
-    { text: '100Mbps', value: 100_000_000 },
-    { text: '300Mbps', value: 300_000_000 },
     { text: '500Mbps', value: 500_000_000 },
+    { text: '300Mbps', value: 300_000_000 },
+    { text: '100Mbps', value: 100_000_000 },
+    { text: '40Mbps', value: 40_000_000 },
+    { text: '10Mbps', value: 10_000_000 },
+    { text: '4Mbps', value: 4_000_000 },
+    { text: '2Mbps', value: 2_000_000 },
+    { text: '1.7Mbps', value: 1_700_000 },
+    { text: '1Mbps', value: 1_000_000 },
+    { text: '512kbps', value: 512000 },
+    { text: '256kbps', value: 256000 },
+    { text: '128kbps', value: 128000 },
+    { text: '64kbps', value: 64000 },
+    { text: '33bps', value: 33 },
+    { text: '14bps', value: 14 },
   ];
 
 
